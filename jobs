@@ -1,0 +1,189 @@
+import React,{useState} from 'react';
+import { Text, View, StyleSheet, TouchableOpacity,ScrollView } from 'react-native';
+import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
+interface JobDetailProps {
+    navigation:any
+}
+
+const JobDetail = ({navigation}: JobDetailProps) => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.header}>
+         <View style={styles.headerInnerBox}>
+            <Text style={styles.headerHeading}>
+              Senior Next.js Developer
+            </Text>
+            <TouchableOpacity onPress={()=>{navigation.pop()}}>
+              <Text>
+                close
+              </Text>
+            </TouchableOpacity>
+         </View>
+      </View>
+      <View style={styles.body}>
+       <ScrollView style={styles.innerContainer}>
+        <View style={styles.bodyJobPostType}>
+          <View style={styles.jobDateAndLocation}>
+              <Text>
+                I
+              </Text>
+              <Text style={{color:'#7A7F81',fontSize:hp(1.5),marginLeft:hp(1)}}>
+                 01 May 2025
+              </Text>
+              <Text style={{color:'#7A7F81',fontSize:hp(1.5),marginLeft:hp(1)}}>
+                I
+              </Text>
+              <Text style={{color:'#2E384A',fontSize:hp(1.5),marginLeft:hp(1)}}>
+              Florida, USA
+              </Text>
+          </View>
+          <Text style={styles.jobType}>
+            Onsite
+          </Text>
+        </View>
+        <View style={{display:'flex',width:'100%',borderColor:'red',flexDirection:'column',borderWidth:0}}>
+           <Text style={{fontSize:hp(2),color:'#000B18',fontWeight:'600',marginVertical:hp(2)}}>
+             Overview
+           </Text>
+           <Text style={{fontSize:hp(1.6),color:'#667085',fontWeight:'400',marginBottom:hp(2)}}>
+             Shoal Late 40 First Nation is seeking Advocate Worker to be located in Kenora, Thunder Bay, of Winnipeg.
+           </Text>
+           <Text style={{fontSize:hp(1.6),color:'#667085',fontWeight:'400',marginBottom:hp(2)}}>
+             This role involves providing support and advocacy for families within the community.
+           </Text>
+           <Text style={{fontSize:hp(1.6),color:'#667085',fontWeight:'400',marginBottom:hp(2)}}>
+            Shoal Late 40 First Nation is seeking Advocate Worker to be located in Kenora, Thunder Bay, of Winnipeg.
+           </Text>
+           <Text style={{fontSize:hp(1.6),color:'#667085',fontWeight:'400',marginBottom:hp(2)}}>
+           This role involves providing support and advocacy for
+           </Text>
+        </View>
+        <View style={{display:'flex',width:'100%',borderColor:'red',flexDirection:'column',borderWidth:0}}>
+           <Text style={{fontSize:hp(2),color:'#000B18',fontWeight:'600',marginBottom:hp(2)}}>
+           Company Descriptioon
+           </Text>
+           <Text style={{fontSize:hp(1.6),color:'#667085',fontWeight:'400',marginBottom:hp(2)}}>
+           Shoal Late 40 First Nation is seeking Advocate Worker to be located in Kenora, Thunder Bay, of Winnipeg.
+           </Text>
+           <Text style={{fontSize:hp(1.6),color:'#667085',fontWeight:'400',marginBottom:hp(2)}}>
+           This role involves providing support and advocacy for families within the community.
+           </Text>
+           <Text style={{fontSize:hp(1.6),color:'#667085',fontWeight:'400',marginBottom:hp(2)}}>
+           Shoal Late 40 First Nation is seeking Advocate Worker to be located in Kenora, Thunder Bay, of Winnipeg.
+           </Text>
+          
+        </View>
+       
+       </ScrollView>
+      </View>
+      <View style={styles.footer}>
+        <TouchableOpacity style={styles.cancelBtn}>
+          <Text style={styles.cancelText}>
+            Cancel
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={{...styles.cancelBtn,backgroundColor:'#2E384A'}}>
+          <Text style={{...styles.cancelText,color:'#FFFFFF',fontWeight:'500'}}>
+            Apply Now
+          </Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+};
+
+export default JobDetail;
+
+const styles = StyleSheet.create({
+  container: {
+    flex:1,
+    borderColor:'black',
+    borderWidth:0,
+    display:'flex',
+    flexDirection:'column',
+    backgroundColor:'#FFFFFF'
+  },
+  header:{
+    width:'100%',
+    borderBottomColor:'#F0F1F3',
+    borderBottomWidth:1,
+    height:hp(8),
+    paddingHorizontal:hp(2)
+  },
+  headerInnerBox:{
+    display:'flex',
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'space-between',
+    flex:1,
+    borderColor:'red',
+    borderWidth:0
+  },
+  headerHeading:{
+     fontSize:hp(2.5),
+     color:'#000000',
+     fontWeight:'600',
+     width:'80%'
+  },
+  body:{
+    width:'100%',
+    borderColor:'green',
+    borderWidth:0,
+    flex:1,
+    padding:hp(2) 
+  },
+  innerContainer:{
+    flex:1,
+    borderColor:'red',
+    borderWidth:0
+  },  
+  bodyJobPostType:{
+    width:'100%',
+    borderBottomColor:'#D0D3D9',
+    borderBottomWidth:1,
+    paddingVertical:hp(2),
+    display:'flex',
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'space-between'
+  },
+  jobDateAndLocation:{
+    display:'flex',
+    flexDirection:'row',
+    width:'80%'
+  },
+  jobType:{
+    backgroundColor:'#E7F8F0',
+    color:'#12B76A',
+    paddingHorizontal:hp(1),
+    paddingVertical:hp(.5),
+    borderRadius:25
+  },
+  footer:{
+    width:'100%',
+    borderTopColor:'#F0F1F3',
+    borderTopWidth:1,
+    height:hp(10),
+    padding:hp(2),
+    display:'flex',
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'space-between',
+  },
+  cancelBtn:{
+    borderRadius:25,
+    borderColor:'#D0D3D9',
+    borderWidth:1,
+    height:'85%',
+    width:'48%',
+    display:'flex',
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'center'
+  },
+  cancelText:{
+    fontSize:hp(1.75),
+    color:'#48505E',
+    fontWeight:'300'
+  }
+});
